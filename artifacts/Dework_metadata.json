@@ -1,0 +1,71 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getHourlyRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_hourlyRate",
+						"type": "uint256"
+					}
+				],
+				"name": "updateHourlyRate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Dework.sol": "Dework"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Dework.sol": {
+			"keccak256": "0xe7342d0ce4aed842a50eea99f38515f95243bb49f3611f6689372c229ea03709",
+			"urls": [
+				"bzz-raw://6d5c286daa5eb34eb72d4b0a6567d6f8a6fd30917440fcaec3c812ec269382bd",
+				"dweb:/ipfs/QmNS3qkgUaotuVLA3NB5Mvm8zBfef2cYTev2rCj6VMAhUY"
+			]
+		}
+	},
+	"version": 1
+}
