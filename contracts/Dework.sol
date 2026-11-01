@@ -100,7 +100,7 @@ contract Dework {
         });
         employerProfiles.push(employerProfile);
         employerIdToAddress[employerId] = msg.sender;
-        emit FreelancerProfileRegistered(employerId, msg.sender);
+        emit EmployerProfileRegistered(employerId, msg.sender);
     }
 
     function getNumberOfCreatedJobList(uint256 employerId) public view returns (uint256) {
@@ -205,6 +205,10 @@ contract Dework {
         JobListing storage job = _getJob(employerId, jobId);
         uint256 amountToSend = job.fixedPriceInWei;
 
+        //check this
+        if (!job.hasHiredFreelancer) {
+            revert Dework_JobClosed(job.id);
+        }
         if (employerBalance[employerId] < amountToSend) {
             revert Dework_NotEnoughBalance(employerId, employerBalance[employerId]);
         }
@@ -234,7 +238,7 @@ contract Dework {
         employerBalance[employerId] -= withdrawalAmount;
         (bool success,) = employerIdToAddress[employerId].call{value: withdrawalAmount}("");
         //TODO: change it with revert statement
-        require(success == false, "Transfer failed to employer");
+        require(success == true, "Transfer failed to employer");
     }
 
    
